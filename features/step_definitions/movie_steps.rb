@@ -35,7 +35,6 @@ end
 
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
-  # rows = page.find("#movies tbody tr").size
-  # rows.should == 10
-  page.assert_selector('#movies tbody tr', count: 10)
+  # page.all('table#movies tr').count.should == (Movie.count + 1)
+  page.assert_selector('#movies tbody tr', count: Movie.count)
 end
